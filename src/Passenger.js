@@ -2,7 +2,8 @@ import React from 'react';
 
 class Passenger extends React.Component {
   render() {
-    return <div>Passenger</div>;
+    const { passenger } = this.props;
+    return <div className="">{passenger.name}</div>;
   }
 }
 export default Passenger;

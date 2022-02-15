@@ -12,8 +12,14 @@ class App extends React.Component {
 
   render() {
     const { passengers } = this.state;
-    console.log(passengers);
-    return <div className="" />;
+
+    return (
+      <div className="">
+        {passengers.map((passenger) => (
+          <Passenger key={passenger._id} passenger={passenger} />
+        ))}
+      </div>
+    );
   }
 }
 export default App;
