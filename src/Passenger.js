@@ -1,14 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Card } from 'react-bootstrap';
 
 class Passenger extends React.Component {
   render() {
     const { passenger } = this.props;
     const { _id, name, trips, airline, __v } = passenger;
+    const { id, airlineName, country, logo, slogan, website, established } =
+      airline[0];
     return (
-      <div className="">
-        {name}, {trips}
-      </div>
+      <Card className="m-3" style={{ width: '12rem' }}>
+        <Card.Img variant="top" src={logo} />
+        <Card.Body>
+          <Card.Title>{name}</Card.Title>
+          <Card.Text>Trips: {trips}</Card.Text>
+          <Card.Text>Country: {country}</Card.Text>
+        </Card.Body>
+      </Card>
     );
   }
 }
